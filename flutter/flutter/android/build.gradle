@@ -18,6 +18,9 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        flatDir {
+            dirs 'libs'
+        }
     }
 }
 
@@ -56,8 +59,8 @@ android {
 
     dependencies {
         implementation("androidx.annotation:annotation:1.9.1")
-        implementation(files("libs/ffmpeg-kit-https-6.0-2.aar"))
-        implementation(files("libs/smart-exception-common-0.2.1.jar"))
-        implementation(files("libs/smart-exception-java-0.2.1.jar"))
+        implementation(name: "ffmpeg-kit-https-6.0-2", ext: "aar")
+        implementation(name: "smart-exception-common-0.2.1", ext: "jar")
+        implementation(name: "smart-exception-java-0.2.1", ext: "jar")
     }
 }
